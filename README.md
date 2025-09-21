@@ -1,7 +1,7 @@
 🍰 BAKED WITH LOVE
 
 A modern and minimalist cake shop website built using HTML, CSS and JavaScript.
-The website showcases cakes, cookies, and waffles with an interactive UI, animated splash screen and a functional Add to Cart feature.
+The website showcases cakes, cookies and waffles with an interactive UI, animated splash screen and a functional Add to Cart feature.
 
 ✨ Features
 

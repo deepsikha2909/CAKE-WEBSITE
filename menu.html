@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - BAKED WITH LOVE</title>
+  <link rel="stylesheet" href="menu-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .cakes-list,
+    .waffles-list,
+    .cookies-list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #d6336c;
+      margin: 50px 0 20px;
+      text-align: center;
+    }
+    .menu-item {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-btn {
+      background: #d6336c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .price {
+      color: #d6336c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiaDha5SW5hD6a1S5UNcSRei4SUpe1Jlry4qq46SbTx3xrFaJFhRoqUf2aP0nFAUNdDc&usqp=CAU" alt="logo" class="logo" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="menu-container">
+    <h1 class="menu-title">Our Cakes Menu</h1>
+    <div class="cakes-list">
+      <!-- Cake 1 -->
+      <div class="menu-item">
+        <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt9prodlp/products/p-midnight-truffle-cake-347291-m.jpg" alt="Chocolate Truffle">
+        <h3>Chocolate Truffle</h3>
+        <p class="description">Rich dark chocolate cake layered with silky ganache.</p>
+        <p class="price">₹499</p>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+
+      <!-- Cake 2 -->
+      <div class="menu-item">
+        <img src="https://www.southernliving.com/thmb/EGa50Z24TBoC_avMfeM-gj7cL-8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/StrawBerry-Delight_beauty_007-9147cb61b9604459956f16dfad4c6da2.jpg" alt="Strawberry Delight">
+        <h3>Strawberry Delight</h3>
+        <p class="description">Soft sponge cake topped with fresh strawberries & cream.</p>
+        <p class="price">₹549</p>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+
+      <!-- Cake 3 -->
+      <div class="menu-item">
+        <img src="https://assets.epicurious.com/photos/5eea2909c0f6cca21c0e6cbc/1:1/w_1966,h_1966,c_limit/red-velvet-cake-with-blackberry-cream-cheese-frosting-recipe-061720.jpg" alt="Red Velvet">
+        <h3>Red Velvet</h3>
+        <p class="description">A luxurious red velvet cake with cream cheese frosting.</p>
+        <p class="price">₹599</p>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+
+      <!-- Cake 4 -->
+      <div class="menu-item">
+        <img src="https://www.sweetandsavorybyshinee.com/wp-content/uploads/2024/03/Vanilla-Cake-1.jpg" alt="Vanilla Classic">
+        <h3>Vanilla Classic</h3>
+        <p class="description">Soft vanilla sponge with light whipped cream frosting.</p>
+        <p class="price">₹399</p>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+
+      <!-- Cake 5 -->
+      <div class="menu-item">
+        <img src="https://i0.wp.com/www.wifemamafoodie.com/wp-content/uploads/2021/06/Simple-Black-Forest-Cake-Close-Up.jpg?fit=1500%2C2250&ssl=1" alt="Black Forest">
+        <h3>Black Forest</h3>
+        <p class="description">Chocolate sponge, cherries, and whipped cream delight.</p>
+        <p class="price">₹579</p>
+        <p class="rating">⭐⭐⭐⭐⭐</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+
+      <!-- Cake 6 -->
+      <div class="menu-item">
+        <img src="https://tfcakes.in/images/products/230201_033443_394_804.jpg" alt="Fruit Overload">
+        <h3>Fruit Overload</h3>
+        <p class="description">Topped with a mix of fresh seasonal fruits and glaze.</p>
+        <p class="price">₹629</p>
+        <p class="rating">⭐⭐⭐⭐☆</p>
+        <button class="menu-btn">Add to Cart</button>
+      </div>
+      
+<!-- Rainbow Cake -->
+<div class="menu-item">
+  <img src="https://bakeoffcakes.in/wp-content/uploads/2024/07/Rainbow-theme-birthday-Cake.jpg" alt="Rainbow Cake">
+  <h3>Rainbow Cake</h3>
+  <p class="description">Colorful layers of soft sponge with creamy frosting.</p>
+  <p class="price">₹699</p>
+  <p class="rating">⭐⭐⭐⭐⭐</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+
+<!-- Roll Cake -->
+<div class="menu-item">
+  <img src="https://www.loveandoliveoil.com/wp-content/uploads/2019/05/strawberry-cake-roll-11.jpg" alt="Roll Cake">
+  <h3>Roll Cake</h3>
+  <p class="description">Fluffy cake rolled with sweet strawberry cream.</p>
+  <p class="price">₹479</p>
+  <p class="rating">⭐⭐⭐⭐☆</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+
+<!-- Tiramisu Cake -->
+<div class="menu-item">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/045/150/294/small_2x/tiramisu-cake-italian-pastry-tiramisu-with-bananas-cacao-and-cream-isolated-tiramisu-flat-lay-png.png" alt="Tiramisu Cake">
+  <h3>Tiramisu Cake</h3>
+  <p class="description">Classic Italian dessert with cocoa, cream, and coffee.</p>
+  <p class="price">₹659</p>
+  <p class="rating">⭐⭐⭐⭐⭐</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+
+<!-- Opera Cake -->
+<div class="menu-item">
+  <img src="https://bakeclub.com.au/cdn/shop/products/Opera_Cake_hero_Piddington_MakeMeABaker_April2019-30_copy.jpg?v=1562726770" alt="Opera Cake">
+  <h3>Opera Cake</h3>
+  <p class="description">Elegant layers of almond sponge with chocolate & coffee.</p>
+  <p class="price">₹749</p>
+  <p class="rating">⭐⭐⭐⭐⭐</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+<!-- Cake 7 - Plain Cake -->
+<div class="menu-item">
+  <img src="https://t3.ftcdn.net/jpg/11/80/33/34/360_F_1180333452_X3iNy9QFruRYBD9tErYAB1VgArsv29yz.jpg" alt="Plain Cake">
+  <h3>Plain Cake</h3>
+  <p class="description">Simple, fluffyand moist vanilla sponge — perfect for any occasion.</p>
+  <p class="price">₹349</p>
+  <p class="rating">⭐⭐⭐⭐</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+
+<!-- Cake 8 - Raspberry Cheesecake -->
+<div class="menu-item">
+  <img src="https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2021/03/Raspberry_Cheesecake-4.jpg" alt="Raspberry Cheesecake">
+  <h3>Raspberry Cheesecake</h3>
+  <p class="description">Creamy cheesecake topped with sweet raspberries and a buttery crust.</p>
+  <p class="price">₹659</p>
+  <p class="rating">⭐⭐⭐⭐⭐</p>
+  <button class="menu-btn">Add to Cart</button>
+</div>
+      <!-- Your existing 12 cake items go here (as shown in your message) -->
+      <!-- Just wrap all cake items inside this .cakes-list block to ensure 6 cakes per row -->
+    </div>
+
+      <h2 class="section-title">Our Waffles Menu</h2>
+    <div class="waffles-list">
+      <!-- Waffle 1 -->
+      <div class="menu-item">
+    <img src="https://www.lovebakesgoodcakes.com/wp-content/uploads/2013/10/Classic-Waffles-30-1024x683.jpg" alt="Classic Waffle">
+    <h3>Classic Waffle</h3>
+    <p class="description">Crispy outside, soft inside — served with syrup.</p>
+    <p class="price">₹179</p>
+    <p class="rating">⭐⭐⭐⭐</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+
+  <!-- Chocolate Waffle -->
+  <div class="menu-item">
+    <img src="https://realfood.tesco.com/media/images/RFO-1400x919-Sharing-Chocolate-Waffles-2b5037e5-d217-4306-95b9-f9f70602c01f-0-1400x919.jpg" alt="Chocolate Waffle">
+    <h3>Chocolate Waffle</h3>
+    <p class="description">Rich cocoa waffles topped with chocolate sauce.</p>
+    <p class="price">₹199</p>
+    <p class="rating">⭐⭐⭐⭐⭐</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+
+  <!-- Peanut Butter Waffle -->
+  <div class="menu-item">
+    <img src="https://www.cupcakediariesblog.com/wp-content/uploads/2014/09/peanut-butter-waffles-2-1-500x375.jpg" alt="Peanut Butter Waffle">
+    <h3>Peanut Butter Waffle</h3>
+    <p class="description">Buttery waffles layered with creamy peanut butter.</p>
+    <p class="price">₹189</p>
+    <p class="rating">⭐⭐⭐⭐</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+
+  <!-- Banana Waffle -->
+  <div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-JBX85oGh9-rveeas4_PxNm5uPW_DuHafcA&s" alt="Banana Waffle">
+    <h3>Banana Waffle</h3>
+    <p class="description">Fresh banana slices on golden waffles.</p>
+    <p class="price">₹169</p>
+    <p class="rating">⭐⭐⭐☆</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+
+  <!-- Red Velvet Waffle -->
+  <div class="menu-item">
+    <img src="https://brooklynactivemama.com/wp-content/uploads/2023/07/Red-Velvet-Waffles-With-Cake-Mix-06-735x980.jpg" alt="Red Velvet Waffle">
+    <h3>Red Velvet Waffle</h3>
+    <p class="description">Vibrant waffles with cream cheese drizzle.</p>
+    <p class="price">₹219</p>
+    <p class="rating">⭐⭐⭐⭐⭐</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+
+  <!-- Pumpkin Waffle -->
+  <div class="menu-item">
+    <img src="https://www.the-girl-who-ate-everything.com/wp-content/uploads/2011/11/pumpkin-waffles-25.jpg" alt="Pumpkin Waffle">
+    <h3>Pumpkin Waffle</h3>
+    <p class="description">Spiced pumpkin waffles perfect for fall lovers.</p>
+    <p class="price">₹199</p>
+    <p class="rating">⭐⭐⭐⭐</p>
+    <button class="menu-btn">Add to Cart</button>
+  </div>
+    </div>
+  </main>
+  
+  <script>
+    document.querySelectorAll(".menu-btn").forEach(button => {
+      button.addEventListener("click", function() {
+        const item = button.closest(".menu-item");
+        const name = item.querySelector("h3").innerText;
+        const price = parseInt(item.querySelector(".price").innerText.replace("₹", ""));
+        const image = item.querySelector("img").src;
+
+        let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+        let existing = cart.find(i => i.name === name);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, image, quantity: 1 });
+        }
+
+        localStorage.setItem("cartItems", JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+</body>
+</html>

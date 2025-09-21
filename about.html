@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us - BAKED WITH LOVE</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #ffe6ec;
+    }
+
+    header {
+      background: #ffb6c1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: dance 2s infinite ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .about-container {
+      background: white;
+      flex: 1 1 500px;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease;
+    }
+
+    .about-container h1 {
+      font-family: 'Playfair Display', serif;
+      color: #d6336c;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .about-img {
+      width: 250px;
+      height: 250px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .about-img:hover {
+      transform: scale(1.05);
+    }
+
+    .story-info {
+      background: #fff9fb;
+      border-left: 4px solid #ff99b9;
+      padding-left: 15px;
+      animation: fadeInRight 1s ease;
+    }
+
+    .story-info h3 {
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    .story-info ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .testimonial-box {
+      flex: 1 1 300px;
+      background: white;
+      border-radius: 20px;
+      padding: 30px 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1.2s ease;
+      overflow: hidden;
+      height: 450px;
+    }
+
+    .testimonial-box h2 {
+      font-family: 'Playfair Display', serif;
+      color: #d6336c;
+      font-size: 26px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+   .why-box {
+  width: 280px;
+  margin: 30px auto 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.why-box h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d6336c;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.why-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-box li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  padding: 4px 0;
+}
+
+.why-box h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d6336c;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-box li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  position: relative;
+  padding-left: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.why-box li:nth-child(1) { animation-delay: 0.2s; }
+.why-box li:nth-child(2) { animation-delay: 0.4s; }
+.why-box li:nth-child(3) { animation-delay: 0.6s; }
+.why-box li:nth-child(4) { animation-delay: 0.8s; }
+
+.why-choose {
+  margin-top: 30px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.why-choose h3 {
+  color: #d6336c;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+}
+
+.why-choose li {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.why-choose li:nth-child(1) { animation-delay: 0.3s; }
+.why-choose li:nth-child(2) { animation-delay: 0.6s; }
+.why-choose li:nth-child(3) { animation-delay: 0.9s; }
+.why-choose li:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: #444;
+      margin: 10px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .testimonial-text::before {
+      content: "❝";
+      position: absolute;
+      left: 0;
+      color: #d6336c;
+      font-size: 18px;
+    }
+
+    .testimonial-name {
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+.testimonial-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fff0f5;
+  font-family: 'Open Sans', sans-serif;
+  flex-wrap: wrap;
+}
+.testimonial-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fff0f5;
+  font-family: 'Open Sans', sans-serif;
+  flex-wrap: wrap;
+}
+
+.testimonial-box {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-width: 280px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.side-section {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  text-align: center;
+  min-width: 250px;
+  font-family: 'Playfair Display', serif;
+  opacity: 0;
+}
+/* Make white box shorter and tighter */
+.short-box {
+  padding: 20px 25px;
+  max-width: 350px;
+  min-height: 220px;
+  font-size: 15px;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Make h2 smaller */
+.short-box h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #c2185b;
+}
+
+/* Adjust line height inside short box */
+.short-box ul li {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.side-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.side-section li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.brand {
+  color: #c2185b;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation triggers */
+.animate-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.animate-right {
+  animation: slideInRight 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.animate-center {
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.testimonial-box {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-width: 280px;
+}
+
+.side-section {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  text-align: center;
+  min-width: 250px;
+}
+
+.side-section h3 {
+  font-family: 'Playfair Display', serif;
+  color: #c2185b;
+  margin-bottom: 10px;
+}
+
+.brand {
+  color: #c2185b;
+  font-weight: bold;
+}
+.animated-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.animated-list li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease-out forwards;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Delay each item slightly */
+.animated-list li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.animated-list li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.animated-list li:nth-child(3) {
+  animation-delay: 1.1s;
+}
+
+/* Keyframes for the fade and slide effect */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.side-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.side-section ul li {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      background: #ffe6ec;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes dance {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiaDha5SW5hD6a1S5UNcSRei4SUpe1Jlry4qq46SbTx3xrFaJFhRoqUf2aP0nFAUNdDc&usqp=CAU" alt="Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-wrapper">
+    <section class="about-container">
+      <h1>About Us</h1>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+        <div>
+          <p>Welcome to <strong>BAKED WITH LOVE</strong> — your destination for handcrafted cakes, fluffy waffles and delicious cookies. Every bite is a celebration of flavor, crafted with care and love in our charming cake shop.</p>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJmGX2uvRr4oKYrs0-GkwmJRrDdEJJjYj84ZoLNypqeFtygFwje24lJyoVpgSAzoNiuk&usqp=CAU" alt="Bakery Shop" class="about-img" />
+        </div>
+        <div class="story-info">
+          <h3>Our Story</h3>
+          <ul>
+            <li><strong>Established:</strong> 2012, Chennai</li>
+            <li><strong>Awards:</strong> Best Bakery 2021 by LocalBites</li>
+            <li><strong>Signature:</strong> Red Velvet, Belgian Waffles, Nutella Cookies</li>
+            <li><strong>Recognized:</strong> Featured in "Top 10 Dessert Places" 2023</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-box">
+      <h2>What Customers Say</h2>
+      <div class="testimonial">
+        <div class="testimonial-text">Absolutely the best red velvet cake I've had!</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-name">~ Priya S.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">Every visit is a sweet adventure. Lovely staff!</div>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <div class="testimonial-name">~ Rahul M.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">Their waffles are heavenly. Soft, warm and delicious.</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-name">~ Kavya D.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">I ordered a custom birthday cake — perfect and beautiful!</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-name">~ Arun P.</div>
+      </div>
+    </section>
+  </div>
+  <section class="testimonial-box">
+  <!-- Existing testimonial slides here... -->
+
+  <div class="testimonial-wrapper">
+  <!-- Left Section: Our Story -->
+  <div class="side-section animate-left">
+    <h3>Our Story</h3>
+    <p><strong>BAKED WITH LOVE</strong> began in a cozy home kitchen, where the sweet aroma of vanilla and cocoa filled every corner. From one oven to many hearts, we’ve grown into a beloved brand that never compromises on quality or love.</p>
+    <ul>
+      <li>  🍩 Handcrafted with heritage recipes</li>
+      <li>  🎓 Skilled artisans trained in Europe</li>
+      <li>  🌸 Every cake tells a story</li>
+    </ul>
+  </div>
+
+  <!-- Center Testimonial Box -->
+  <div class="testimonial-box animate-center">
+    <h2>Why Choose Us?</h2>
+    <p><strong>At <span class="brand">BAKED WITH LOVE</span></strong>, we pour passion into every pastry. Our commitment to quality and customer happiness makes us the top choice for sweet moments that matter.</p>
+    <ul style="list-style: none; padding: 0; text-align: left;">
+      <li>✨ Over 10 years of bakery excellence</li>
+      <li>🍰 100+ custom cakes crafted every month</li>
+      <li>🌿 Premium ingredients, no preservatives</li>
+      <li>🏆 Rated 4.9★ by 1,000+ happy customers</li>
+    </ul>
+  </div>
+
+  <!-- Right Section: Special Offers -->
+  <div class="side-section animate-right">
+    <h3>Special Offers</h3>
+    <ul>
+      <li>🎁 <strong>First Order?</strong> Get 10% OFF instantly!</li>
+      <li>🎂 <strong>Birthday Bash:</strong> Free cupcake with every birthday cake</li>
+      <li>🚚 <strong>Sweet Saver:</strong> Free delivery on orders ₹500+</li>
+      <li>💌 <strong>Loyalty Program:</strong> Earn points for every ₹ spent</li>
+    </ul>
+  </div>
+</div>
+
+
+</section>
+
+
+  <div class="gallery">
+    <img src="https://content.jdmagicbox.com/v2/comp/thane/m4/022pxx22.xx22.180514142733.b4m4/catalogue/sweet-tooth-dombivli-east-thane-bakeries-0ex1wc4a4f.jpg" alt="Shop1" />
+    <img src="https://media-cdn.tripadvisor.com/media/photo-p/12/61/fc/c2/cake-shop.jpg" alt="Shop2" />
+    <img src="https://thumbs.dreamstime.com/b/woman-decorating-cake-bakery-shop-being-filmed-phone-interior-setting-woman-decorating-cake-bakery-shop-356918519.jpg" alt="Shop3" />
+    <img src="https://t4.ftcdn.net/jpg/05/85/52/79/360_F_585527972_y9FbeOnpkG8m1VFurLPhqiO3N9fvJUNB.jpg" alt="Shop4" />
+  </div>
+
+  <footer>
+    &copy; 2025 BAKED WITH LOVE. All rights reserved.
+  </footer>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+  </script>
+</body>
+</html>

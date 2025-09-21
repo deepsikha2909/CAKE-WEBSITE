@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - BAKED WITH LOVE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fff0f5 url('https://www.transparenttextures.com/patterns/cup-cakes.png');
+    }
+
+    header {
+      background-color: #ffb6c1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    .nav-logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #c2185b88;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #c2185b;
+    }
+
+    .contact-container {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: #c2185b;
+      margin-bottom: 10px;
+      animation: fadeIn 1s forwards;
+    }
+
+    .badge {
+      background: #c2185b;
+      display: inline-block;
+      padding: 8px 20px;
+      color: white;
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 30px;
+      animation: fadeIn 1.3s forwards;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      min-width: 300px;
+    }
+
+    .contact-info h2 {
+      color: #c2185b;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .contact-info ul li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 8px 16px;
+      background: #ff6090;
+      color: #fff;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-buttons a:hover {
+      background: #c2185b;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 350px;
+      width: 90%;
+      animation: fadeInScale 0.4s ease-in-out;
+    }
+
+    .popup-box h2 {
+      color: #c2185b;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .popup-box button {
+      background: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .popup-box button:hover {
+      background: #a0154a;
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #a0154a;
+    }
+
+    .map-section {
+      margin: 60px auto;
+      max-width: 1100px;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      position: relative;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .social-icons a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c2185b;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .social-icons a:hover::after {
+      opacity: 1;
+    }
+.testimonial-carousel {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.testimonial.active {
+  opacity: 1;
+}
+
+    .testimonials {
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      max-width: 800px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      position: relative;
+    }
+    .testimonial-carousel {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+.testimonials {
+  margin: 60px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  max-width: 800px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.testimonial-carousel {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+}
+
+.testimonial.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.testimonial {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.testimonial.active {
+  opacity: 1;
+}
+
+
+    .testimonial {
+      font-style: italic;
+      font-size: 16px;
+      color: #333;
+      animation: slideUp 12s infinite;
+      text-align: center;
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(100%); }
+      10%, 40% { opacity: 1; transform: translateY(0); }
+      50% { opacity: 0; transform: translateY(-100%); }
+      100% { opacity: 0; transform: translateY(-100%); }
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+      }
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLem27SW2vVo13gEjSVkFDFyI6hHJdGLlZmg&s" alt="Logo" />
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <h1><span>BAKED WITH LOVE</span></h1>
+    <div class="badge">📩 We reply within 24 hours!</div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Reach Us</h2>
+        <ul>
+          <li>📍 123 Sweet Street, Caketown</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ hello@bakedwithlove.com</li>
+        </ul>
+        <div class="contact-buttons">
+          <a href="tel:+919876543210">📞 Call Now</a>
+          <a href="mailto:hello@bakedwithlove.com">✉️ Email Us</a>
+          <a href="https://wa.me/919876543210" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="showPopup(event)">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="map-section">
+      <h2 style="font-family: 'Playfair Display', serif; color: #c2185b; font-size: 30px; margin-bottom: 10px;">📍 Find Us Easily</h2>
+      <p style="color: #333; margin-bottom: 25px;">We’re open 7 days a week and located in the heart of Caketown. Visit us or follow the map below.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5177391503516!2d76.95591131481258!3d11.016844492149825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859a01f4b0f33%3A0x27ea44da960b6e96!2sBakery!5e0!3m2!1sen!2sin!4v1699000000000" allowfullscreen="" loading="lazy"></iframe>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank" data-tooltip="Follow us on Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+        </a>
+        <a href="https://facebook.com" target="_blank" data-tooltip="Follow us on Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />
+        </a>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS - Rotating -->
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="testimonial-carousel">
+    <div class="testimonial active">“The best cake shop in town! I ordered a custom Raspberry cheesecake and it was delicious.” ~ Priya S.</div>
+
+  </div>
+</div>
+
+
+  </div>
+
+  <div id="thankYouPopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>Thank You! 🎉</h2>
+      <p>Your message has been sent successfully.<br>We’ll get back to you soon!</p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <script>
+  // Show Thank You Popup on Form Submit
+  function showPopup(event) {
+    event.preventDefault();
+    document.getElementById("thankYouPopup").style.display = "flex";
+    document.querySelector(".contact-form").reset();
+  }
+
+  // Close Thank You Popup
+  function closePopup() {
+    document.getElementById("thankYouPopup").style.display = "none";
+  }
+
+  // Rotating Testimonials - every 2 seconds
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonials = document.querySelectorAll(".testimonial");
+    let index = 0;
+
+    // Initially show only the first testimonial
+    testimonials.forEach((t, i) => {
+      t.style.opacity = i === 0 ? "1" : "0";
+      if (i === 0) t.classList.add("active");
+    });
+
+    setInterval(() => {
+      testimonials[index].classList.remove("active");
+      testimonials[index].style.opacity = 0;
+
+      index = (index + 1) % testimonials.length;
+
+      testimonials[index].classList.add("active");
+      testimonials[index].style.opacity = 1;
+    }, 1000); // Rotate every 2 seconds
+  });
+</script>
+
+</body>
+</html>
